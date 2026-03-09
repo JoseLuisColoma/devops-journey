@@ -1,0 +1,3 @@
+[submodule "althassian_git_tutorial/bitbucketstationlocations"]
+	path = althassian_git_tutorial/bitbucketstationlocations
+	url = https://github.com/atlassian/bitbucketstationlocations.git
