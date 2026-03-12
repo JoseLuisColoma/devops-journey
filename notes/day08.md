@@ -82,6 +82,10 @@ El contenedor puede ejecutarse en cualquier máquina que tenga Docker instalado.
 # 4. Arquitectura de Docker
 
 Docker está compuesto por varios componentes principales.
+- Docker Engine
+- Docker Images
+- Docker Containers
+- Docker Registry
 
 ## Docker Engine
 
@@ -117,11 +121,11 @@ docker
 
 Ejemplos de uso:
 
-docker run  
-docker build  
-docker pull  
-docker ps  
-docker stop  
+docker run
+docker build
+docker pull
+docker ps
+docker stop
 
 ## Docker Hub
 
@@ -162,10 +166,10 @@ Incluye:
 
 Ejemplos:
 
-python:3.11  
-node:20  
-nginx  
-ubuntu  
+python:3.11
+node:20
+nginx
+ubuntu
 
 Las imágenes pueden descargarse desde Docker Hub o construirse localmente.
 
@@ -175,8 +179,8 @@ Un contenedor es una instancia en ejecución de una imagen.
 
 Ejemplo:
 
-Imagen → nginx  
-Contenedor → nginx-container  
+Imagen → nginx
+Contenedor → nginx-container
 
 Se pueden ejecutar múltiples contenedores a partir de la misma imagen.
 
@@ -206,11 +210,11 @@ Docker permite crear redes virtuales para que los contenedores puedan comunicars
 
 Ejemplo de arquitectura:
 
-frontend container  
-↓  
-backend container  
-↓  
-database container  
+frontend container
+↓
+backend container
+↓
+database container
 
 Esto permite crear aplicaciones distribuidas basadas en microservicios.
 
@@ -222,13 +226,13 @@ Esto permite crear aplicaciones distribuidas basadas en microservicios.
 
 Arquitectura:
 
-Hardware  
-↓  
-Hypervisor  
-↓  
-Guest OS  
-↓  
-Aplicación  
+Hardware
+↓
+Hypervisor
+↓
+Guest OS
+↓
+Aplicación
 
 Características:
 
@@ -366,6 +370,98 @@ Ejecutar contenedor:
 docker run nginx  
 
 Docker crea automáticamente un contenedor basado en esa imagen.
+
+
+# Contenedor
+
+Instancia en ejecución de una imagen.
+
+Ejemplo:
+
+docker run nginx
+
+---
+
+# Instalación de Docker
+
+sudo apt update  
+sudo apt install docker.io  
+
+Verificar instalación:
+
+docker --version
+
+---
+
+# Comandos básicos
+
+Descargar imagen:
+
+docker pull nginx
+
+Ver imágenes:
+
+docker images
+
+Ejecutar contenedor:
+
+docker run nginx
+
+Ver contenedores:
+
+docker ps
+
+Ver todos:
+
+docker ps -a
+
+Detener contenedor:
+
+docker stop ID
+
+Eliminar contenedor:
+
+docker rm ID
+
+---
+
+# Ejecutar contenedor en segundo plano
+
+docker run -d nginx
+
+Ejemplo con puerto:
+
+docker run -d -p 8080:80 nginx
+
+---
+
+# Ver logs
+
+docker logs ID
+
+Seguir logs:
+
+docker logs -f ID
+
+---
+
+# Entrar al contenedor
+
+docker exec -it ID bash
+
+---
+
+# Flujo Docker en DevOps
+
+Developer  
+↓  
+Dockerfile  
+↓  
+Docker Image  
+↓  
+Docker Registry  
+↓  
+Deploy en Kubernetes
 
 ---
 
